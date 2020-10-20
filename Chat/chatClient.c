@@ -1,6 +1,5 @@
 /*
-* Client for requesting file from the server.
-* Prints the contents of the file in the terminal. - for now
+* Chat client sends the message and awaits for a reply
 */
 
 #include <stdio.h>
@@ -55,16 +54,15 @@ int main (int argc, char* argv[])
 	//read/write data
 	
 	printf ("Enter messages to be sent to the server: \n");
-    while (1)
-    {
-        if (cnt = read (1, buf, BUFSIZE));
-            send(sockfd, buf, cnt,0);
-        cnt = recv (sockfd, buf, BUFSIZE, 0);
-        write (1, buf, cnt);
-        bzero(buf, BUFSIZE);
-    }
+    	while (1)
+    	{
+        	if (cnt = read (1, buf, BUFSIZE));
+            		send(sockfd, buf, cnt,0);
+        	cnt = recv (sockfd, buf, BUFSIZE, 0);
+        	write (1, buf, cnt);
+        	bzero(buf, BUFSIZE);
+    	}
 	
-	//writing part to be added - right now printed to the console 
 	close (sockfd);
 	//close the connection
 	
