@@ -1,7 +1,5 @@
 /*
-* This is a file server that looks for a particuar file given the path.
-* If present, sends the contents of the file to the client.
-* Otherwise, terminates the connection after sending an error message.
+* Server responds to the message that is sent by the client
 */
 
 #include <stdio.h>
@@ -24,13 +22,13 @@ void servfunc (int sockfd)
 	char buf[BUFSIZE];
 	int cnt;
 	while (cnt = recv(sockfd, buf, BUFSIZE, 0))
-    {
-        write (1, buf, cnt);
-        printf ("\n");
-        bzero(buf, BUFSIZE);
-        if (cnt = read (1, buf, BUFSIZE));
-            send (sockfd, buf, cnt,0);
-    }
+    	{
+        	write (1, buf, cnt);
+        	printf ("\n");
+        	bzero(buf, BUFSIZE);
+        	if (cnt = read (1, buf, BUFSIZE));
+            		send (sockfd, buf, cnt,0);
+    	}
 	
 }
 
@@ -85,13 +83,13 @@ int main ()
 		if (fval == 0)
 		{
 			close (listenfd);
-			//close the listen file descriptor in the child
+			//close the listen socket descriptor in the child
 			
 			//perform server operation
 			servfunc(acceptfd);
 			
 			close (acceptfd);
-			//close the accepted file descriptor
+			//close the accepted socket descriptor
 			exit(0);
 		}
 		close (acceptfd);
