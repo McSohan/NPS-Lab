@@ -1,5 +1,5 @@
 /*
-* Connection oriented Concurrent echo server.
+* Connection oriented iterative echo server.
 */
 
 #include <stdio.h>
